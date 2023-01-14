@@ -1,0 +1,393 @@
+1 Fibonacci series
+
+using System;
+
+
+namespace csharpprogrammingdemo
+{
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            int first = 0, second = 1, numOfElements, nextNumber; //Define variables
+            Console.WriteLine("Enter no. of elements to print greater than 2: "); //Ask user for input
+            numOfElements = Convert.ToInt32(Console.ReadLine()); //Take user input
+            
+                Console.WriteLine(first + " "+ second + " ");//print first 2 no.
+                for (int i=2;i< numOfElements;i++) //Loop for finding next numbers in series.
+                {
+                    nextNumber = first+second;
+                    Console.WriteLine(nextNumber + " ");
+                    first = second;
+                    second = nextNumber;
+
+                }
+        }
+    }
+}
+
+o/p=
+
+Enter no. of elements to print greater than 2:
+5
+0 1
+1
+2
+3
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 26812) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+=====================================================================================================================================================
+
+2.Prime number 
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class primenumber
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a number : ");//Ask user for input
+            int number = Convert.ToInt32(Console.ReadLine());//Read user input
+            bool IsPrime = true;                             //Boolean expression 
+            for (int i = 2; i < number / 2; i++)             // loop to check if number is prime
+            {
+                if (number % i == 0)
+                {
+                    IsPrime = false;
+                    break;
+                }
+            }
+            if (IsPrime)                         //Print if no. is prime 
+            {
+                Console.WriteLine("Number is Prime.");
+            }
+            else
+            {
+                Console.WriteLine("Number is not Prime.");           //Print no. is not prime if condition fails
+            }
+          
+        }
+    }
+}
+
+o/p =
+
+Enter a number :
+7
+Number is Prime.
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 1360) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+============================================================================================================================================================
+
+3 Palindrome number
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class palindromenumber
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a Number : ");
+            int number = Convert.ToInt32(Console.ReadLine());//Read user input
+            int remainder, sum = 0; //define variables
+            int temp = number;  //store input no. in other variablr for further operations
+            while (number > 0)
+            { 
+                remainder = number % 10;  //Get last digit
+                sum = (sum * 10) + remainder; //multiply the sum with 10 and then add the remainder
+                number = number / 10; //Get next digit from last
+            }
+            if (temp == sum) //check if reversed no. is same as original
+            {
+                Console.WriteLine($"Number {temp} is Palindrome."); //$ substitute value of variable in placeholder
+            }
+            else
+            {
+                Console.WriteLine($"Number {temp} is not Palindrome");
+            }
+        }
+
+o/p = 
+Enter a Number :
+456
+Number 456 is not Palindrome
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 2996) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+===============================================================================================================================================================
+4 Factorial
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class factorial
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a Number : "); //ask user for input
+            int number = Convert.ToInt32(Console.ReadLine()); //read user input
+            int factorial = 1;                               //define variable and assign value
+            for (int i = 1; i <= number; i++)      //loop to get product of no. from 1 to given no.
+            {
+                factorial = factorial * i;
+            }
+            Console.WriteLine($"Factorial of {number}  is: {factorial}"); //Show output and values from variable are subtituted to place holder using $
+
+        }
+    }
+}
+
+o/p = 
+
+Enter a Number :
+5
+Factorial of 5  is: 120
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 24412) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+==============================================================================================================================================================
+
+5. Armstrong number
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class armstrongNumber
+    {
+        static void Main(string[] args)
+        {
+            int number, rem, temp, sum = 0;
+            Console.WriteLine("Enter Number : ");  //ask user for input
+            number = Convert.ToInt32(Console.ReadLine());  //read user input
+
+            temp = number;       //save in another variable for further operation
+            while (number > 0)   //loop to add cubes of each digit
+            {
+                rem = number % 10;
+                sum = sum + (rem * rem * rem);
+                number = number / 10;
+            }
+
+            if (temp == sum)      // check condition
+                Console.WriteLine(temp + " Is A Armstrong Number"); 
+            else
+                Console.WriteLine(temp + " Is Not A Armstrong Number");
+        }
+    }
+}
+
+o/p =
+
+Enter Number :
+125
+125 Is Not A Armstrong Number
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 2568) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+============================================================================================================================================================
+6. Sum of digits
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class sumofdigits
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the Number : ");  //ask user for input
+            int number = Convert.ToInt32(Console.ReadLine()); //read user input
+            int sum = 0, remainder;  //define variables
+
+            while (number > 0) //loop to find sum of digits
+            {
+                remainder = number % 10; //get last digit
+                sum = sum + remainder; //adds that digit in sum
+                number = number / 10; //give quotient when divided by 10 and save as no.
+            }
+
+            Console.WriteLine($"The Reverse order is : {sum}"); //output
+        }
+    }
+}
+
+o/p=
+
+Enter the Number :
+234
+The Resum of digits is : 9
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 22860) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+===============================================================================================================================================================
+7. Reverse number
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class reversenumber
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a Number : ");
+            int number = Convert.ToInt32(Console.ReadLine()); //read input
+            int remainder, reverse = 0; //variables
+            while (number > 0)
+            {
+                remainder = number % 10; //Gives remainder 
+                reverse = (reverse * 10) + remainder; //multiply with 10 and add remainder
+                number = number / 10; //Gives quotient 
+            }
+            Console.WriteLine($"The Reverse order is : {reverse}");//give output
+        }
+    }
+}
+
+o/p =
+
+Enter a Number :
+4567
+The Reverse order is : 7654
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 13412) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+==============================================================================================================================================================
+8. Swap 2 no. without using third variable
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class swapwithout3rdvariable
+    {
+        static void Main(string[] args)
+        {
+            int first, second;                   
+            Console.WriteLine("Enter first number: ");
+            first = Convert.ToInt32(Console.ReadLine()); //take first no. as 'first'
+            Console.WriteLine("Enter second number: ");
+            second = Convert.ToInt32(Console.ReadLine()); //take second no. as 'second'
+            first = first + second;
+            second = first - second;   //now first no. is stored in second variable
+            first = first - second;    //now second no. is stored in first variable
+            Console.WriteLine($"The first no. is : {first}"); 
+            Console.WriteLine($"The second no. is : {second}");
+        }
+    }
+}
+o/p =
+
+Enter first number:
+56
+Enter second number:
+78
+The first no. is : 78
+The second no. is : 56
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 7720) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+============================================================================================================================================================
+
+9. Alphabetical triangle
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class alphabettriangle
+    {
+        static void Main(string[] args)
+        {
+            char ch = 'A';
+            int i, j, k, m;
+            for (i = 1; i <= 5; i++)//for rows
+            {
+                for (j = 5; j >= i; j--)//for spaces
+                    Console.Write(" ");
+                for (k = 1; k <= i; k++)//for first half of pyramid
+                    Console.Write(ch++);
+                ch--;
+                for (m = 1; m < i; m++)//for second half of pyramid
+                    Console.Write(--ch);
+                Console.Write("\n");
+                ch = 'A';
+            }
+        }
+    }
+}
+ o/p =
+
+     a
+    aba
+   abcba
+  abcdcba
+ abcdedcba
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 26316) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+=========================================================================================================================================================
+10  Numerical triangle
+
+using System;
+
+namespace csharpprogrammingdemo
+{
+    class numericaltriangle
+    {
+        public static void Main(string[] args)
+        {
+            int i, j, k, l, n;
+            Console.Write("Enter the Range=");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (i = 1; i <= n; i++)     //for rows
+            {
+                for (j = 1; j <= n - i; j++) //for spaces
+                {
+                    Console.Write(" ");
+                }
+                for (k = 1; k <= i; k++)  //for first half of pyramid
+                {
+                    Console.Write(k);
+                }
+               for (l = i - 1; l >= 1; l--) //for second half of pyramid
+                {
+                    Console.Write(l);
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+}
+
+o/p=
+
+Enter the Range=5
+    1
+   121
+  12321
+ 1234321
+123454321
+
+C:\Users\VSANJEKA\source\repos\csharpprogrammingdemo\csharpprogrammingdemo\bin\Debug\netcoreapp3.1\csharpprogrammingdemo.exe (process 14920) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
